@@ -1,213 +1,2674 @@
-<!-- =================================================
-     TEXTO DE LA CARTA
-================================================= -->
+<!DOCTYPE html>
+<html lang="es">
 
-<section class="texto revelar">
+<head>
 
-    <p>
-        No sé si existe una manera perfecta de escribir
-        todo lo que siento, pero sé que necesitaba
-        intentarlo.
-    </p>
+<meta charset="UTF-8">
 
-    <p>
-        Porque hay algo que quizás nunca dejé de tener
-        claro: yo todavía te quiero en mi vida.
-    </p>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <p>
-        Y no te escribo solamente para recordar lo bonito
-        que vivimos. Te escribo porque todavía existe
-        dentro de mí un deseo muy sincero de volver a
-        encontrarnos, de volver a hablar, de volver a
-        mirarnos de la manera en que alguna vez lo hicimos.
-    </p>
+<meta name="theme-color" content="#10040a">
 
-    <p>
-        He pensado mucho en nosotros. En lo que vivimos,
-        en lo que nos hizo felices, pero también en aquello
-        que nos hizo daño.
-    </p>
+<title>Para ti, Sofi ♡</title>
 
-    <p>
-        Y si algo he entendido con el tiempo es que no
-        quiero volver simplemente para repetir nuestra
-        historia.
-    </p>
 
-    <p class="centrado">
-        Quiero volver para escribir una historia diferente.
-    </p>
+<style>
 
-    <p>
-        Una en la que podamos escucharnos más, entendernos
-        mejor, cuidar lo que sentimos y aprender de todo
-        aquello que alguna vez nos hizo alejarnos.
-    </p>
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
 
-    <p>
-        Sé que las palabras por sí solas no arreglan las
-        cosas. Por eso no quiero prometerte un montón de
-        cosas bonitas solamente para convencerte.
-    </p>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <p>
-        Si alguna vez tengo la oportunidad de volver a estar
-        contigo, quiero demostrártelo con hechos.
-    </p>
+html {
+    scroll-behavior: smooth;
+}
 
-    <p>
-        Quiero que puedas volver a sentir tranquilidad
-        conmigo. Que puedas volver a reírte conmigo.
-        Que podamos recuperar esa complicidad que alguna
-        vez tuvimos y, poco a poco, construir algo todavía
-        más bonito.
-    </p>
+body {
 
-    <p>
-        Porque sí, extraño muchas cosas de nosotros.
-        Extraño nuestras conversaciones, nuestras risas,
-        nuestros momentos, nuestras pequeñas costumbres...
-        pero sobre todo, extraño tenerte cerca.
-    </p>
+    min-height: 100vh;
 
-    <p>
-        Extraño esa sensación de saber que podía contarte
-        cualquier cosa y que eras una de las personas con
-        las que quería compartir mis días.
-    </p>
+    overflow-x: hidden;
 
-    <p>
-        Y quizás lo más difícil de admitir es que todavía
-        imagino momentos contigo.
-    </p>
+    background: #090308;
 
-    <p>
-        Todavía pienso en lugares a los que me gustaría ir
-        contigo, cosas que quisiera contarte y momentos que
-        me gustaría volver a vivir a tu lado.
-    </p>
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    <p class="centrado">
-        Porque para mí, lo nuestro todavía significa mucho.
-    </p>
+    color: #f7e9df;
 
-    <p>
-        No quiero convencerte de algo que tu corazón no
-        quiera. Tampoco quiero presionarte.
-    </p>
+}
 
-    <p>
-        Solo quiero ser completamente sincero contigo:
-        si existe una oportunidad para nosotros, yo quiero
-        intentarlo.
-    </p>
 
-    <p>
-        Quiero volver a conquistarte.
-        Quiero volver a ganarme tu confianza.
-        Quiero demostrarte que puedo hacerlo mejor.
-    </p>
+/* =========================================================
+   PANTALLA DE INICIO
+========================================================= */
 
-    <p>
-        Y si alguna vez decides darme nuevamente un espacio
-        en tu vida, no quiero tomarlo como algo garantizado.
-        Quiero cuidarlo.
-    </p>
+#inicio {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(120,20,45,.28),
+            transparent 36%
+        ),
+
+        linear-gradient(
+            180deg,
+            #08030a 0%,
+            #15070e 55%,
+            #210b13 100%
+        );
+
+    transition:
+
+        opacity 1.5s ease,
+        visibility 1.5s ease;
+
+}
+
+
+#inicio.oculto {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   ESTRELLAS
+========================================================= */
+
+.estrellas,
+.estrellas::before,
+.estrellas::after {
+
+    position: absolute;
+
+    inset: 0;
+
+    content: "";
+
+    pointer-events: none;
+
+}
+
+
+.estrellas {
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.9) 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(255,220,220,.6) 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.7) 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+
+        110px 130px,
+        170px 190px,
+        230px 210px;
+
+    background-position:
+
+        20px 40px,
+        70px 100px,
+        130px 20px;
+
+    opacity: .55;
+
+    animation:
+        estrellas 8s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes estrellas {
+
+    from {
+        opacity: .25;
+    }
+
+    to {
+        opacity: .75;
+    }
+
+}
+
+
+/* =========================================================
+   LUNA
+========================================================= */
+
+.luna {
+
+    position: absolute;
+
+    top: 10%;
+    right: 12%;
+
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    background: #fff3df;
+
+    box-shadow:
+
+        0 0 25px
+        rgba(255,235,210,.35),
+
+        0 0 70px
+        rgba(255,225,190,.15);
+
+    opacity: .9;
+
+}
+
+
+.luna::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    background: #0b0409;
+
+    top: -9px;
+
+    left: 20px;
+
+}
+
+
+/* =========================================================
+   TEXTO INTRODUCTORIO
+========================================================= */
+
+.intro {
+
+    position: absolute;
+
+    top: 10%;
+
+    width: 100%;
+
+    padding: 0 25px;
+
+    text-align: center;
+
+    animation:
+        aparecerIntro 2s ease forwards;
+
+}
+
+
+.intro small {
+
+    display: block;
+
+    color: #d8a4a9;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+
+}
+
+
+.intro h1 {
+
+    color: #f6d8cf;
+
+    font-size:
+        clamp(
+            28px,
+            8vw,
+            48px
+        );
+
+    font-weight: normal;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 20px
+        rgba(255,190,180,.15);
+
+}
+
+
+@keyframes aparecerIntro {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   SOBRE
+========================================================= */
+
+.sobre-contenedor {
+
+    position: relative;
+
+    width:
+        min(
+            88vw,
+            380px
+        );
+
+    margin-top: 100px;
+
+    perspective: 1200px;
+
+    animation:
+        aparecerSobre
+        2s ease .5s both;
+
+}
+
+
+@keyframes aparecerSobre {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+.sobre {
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 1.45;
+
+    cursor: pointer;
+
+    transform-style: preserve-3d;
+
+    filter:
+        drop-shadow(
+            0 25px 35px
+            rgba(0,0,0,.65)
+        );
+
+}
+
+
+/* =========================================================
+   CUERPO DEL SOBRE
+========================================================= */
+
+.sobre-cuerpo {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #6e172c,
+            #4b0e1e
+        );
+
+    border-radius: 4px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255,220,210,.12);
+
+}
+
+
+.sobre-cuerpo::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    border-style: solid;
+
+    border-width:
+        0 0 100% 50%;
+
+    border-color:
+        transparent
+        transparent
+        #5b1125
+        transparent;
+
+    opacity: .7;
+
+}
+
+
+.sobre-cuerpo::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    border-style: solid;
+
+    border-width:
+        0 50% 100% 0;
+
+    border-color:
+        transparent
+        #3e0b18
+        transparent
+        transparent;
+
+    opacity: .6;
+
+}
+
+
+/* =========================================================
+   SOLAPA
+========================================================= */
+
+.solapa {
+
+    position: absolute;
+
+    z-index: 5;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 58%;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #861c37,
+            #5d1025
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    transform-origin:
+        top center;
+
+    transition:
+        transform
+        1.3s
+        cubic-bezier(
+            .77,
+            0,
+            .18,
+            1
+        );
+
+    backface-visibility: hidden;
+
+}
+
+
+/* =========================================================
+   PAPEL
+========================================================= */
+
+.papel {
+
+    position: absolute;
+
+    z-index: 3;
+
+    left: 8%;
+    bottom: 8%;
+
+    width: 84%;
+    height: 78%;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #fffaf0,
+            #f1dfce
+        );
+
+    color: #54252c;
+
+    padding: 25px;
+
+    box-shadow:
+        0 10px 20px
+        rgba(0,0,0,.2);
+
+    transform:
+        translateY(55%);
+
+    transition:
+
+        transform
+        1.4s
+        cubic-bezier(
+            .77,
+            0,
+            .18,
+            1
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+}
+
+
+.papel span {
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    font-style: italic;
+
+}
+
+
+/* =========================================================
+   SELLO
+========================================================= */
+
+.sello {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+    bottom: 22%;
+
+    transform:
+        translateX(-50%);
+
+    width: 62px;
+    height: 62px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            #e56a73,
+            #9b1f35 60%,
+            #651023
+        );
+
+    border:
+        2px solid
+        rgba(255,220,200,.25);
+
+    box-shadow:
+
+        0 5px 15px
+        rgba(0,0,0,.4),
+
+        inset 0 2px 5px
+        rgba(255,255,255,.2);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ffd9cc;
+
+    font-size: 25px;
+
+    transition:
+
+        opacity .5s ease,
+        transform .7s ease;
+
+}
+
+
+/* =========================================================
+   SOBRE ABIERTO
+========================================================= */
+
+.sobre.abierto .solapa {
+
+    transform:
+        rotateX(180deg);
+
+}
+
+
+.sobre.abierto .papel {
+
+    transform:
+        translateY(-8%);
+
+}
+
+
+.sobre.abierto .sello {
+
+    opacity: 0;
+
+    transform:
+        translateX(-50%)
+        scale(1.4);
+
+}
+
+
+/* =========================================================
+   INDICACIÓN
+========================================================= */
+
+.tocar {
+
+    position: absolute;
+
+    bottom: 9%;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #d7a9ad;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    animation:
+        respirar
+        2s ease-in-out infinite;
+
+}
+
+
+@keyframes respirar {
+
+    0%,100% {
+        opacity: .45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   CARTA
+========================================================= */
+
+#carta {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        80px 18px 100px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(130,20,45,.18),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            180deg,
+            #16070d,
+            #260c15 45%,
+            #12050a
+        );
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   CORAZONES
+========================================================= */
+
+.corazones {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 2;
+
+}
+
+
+.corazon {
+
+    position: absolute;
+
+    bottom: -30px;
+
+    color: #d5485b;
+
+    font-size: 16px;
+
+    opacity: 0;
+
+    animation:
+        subir
+        8s
+        linear
+        infinite;
+
+}
+
+
+@keyframes subir {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    10% {
+        opacity: .5;
+    }
+
+    90% {
+        opacity: .2;
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   PÉTALOS
+========================================================= */
+
+.petalo {
+
+    position: absolute;
+
+    top: -30px;
+
+    color: #e3b53d;
+
+    opacity: .55;
+
+    font-size: 18px;
+
+    animation:
+        caer
+        10s
+        linear
+        infinite;
+
+}
+
+
+@keyframes caer {
+
+    0% {
+
+        transform:
+            translateY(-50px)
+            rotate(0deg);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(110vh)
+            translateX(80px)
+            rotate(500deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   CONTENEDOR DE LA CARTA
+========================================================= */
+
+.contenido-carta {
+
+    position: relative;
+
+    z-index: 10;
+
+    width:
+        min(
+            100%,
+            720px
+        );
+
+    margin: auto;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #fffaf2,
+            #f3e1d2
+        );
+
+    color: #57252d;
+
+    padding:
+
+        clamp(
+            28px,
+            7vw,
+            65px
+        )
+
+        clamp(
+            22px,
+            7vw,
+            70px
+        );
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.5);
+
+    overflow: hidden;
+
+}
+
+
+.contenido-carta::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border:
+        1px solid
+        rgba(130,40,50,.15);
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   ENCABEZADO
+========================================================= */
+
+.encabezado {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+
+}
+
+
+.encabezado small {
+
+    display: block;
+
+    color: #a46b70;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+
+}
+
+
+.encabezado h2 {
+
+    color: #84182f;
+
+    font-size:
+        clamp(
+            30px,
+            8vw,
+            48px
+        );
+
+    font-weight: normal;
+
+    margin-bottom: 10px;
+
+}
+
+
+.linea {
+
+    width: 65px;
+
+    height: 1px;
+
+    background: #d2a437;
+
+    margin: auto;
+
+}
+
+
+/* =========================================================
+   TEXTO PRINCIPAL
+========================================================= */
+
+.texto {
+
+    font-size:
+        clamp(
+            16px,
+            4.2vw,
+            19px
+        );
+
+    line-height: 2;
+
+    text-align: left;
+
+}
+
+
+.texto p {
+
+    margin-bottom: 25px;
+
+}
+
+
+.texto .centrado {
+
+    text-align: center;
+
+    color: #84182f;
+
+    font-style: italic;
+
+    margin:
+        38px 0;
+
+}
+
+
+/* =========================================================
+   CIERRE / DESEO DE VOLVER
+========================================================= */
+
+.cierre {
+
+    margin-top: 50px;
+
+    padding-top: 35px;
+
+    border-top:
+        1px solid
+        rgba(130,40,50,.15);
+
+    text-align: center;
+
+}
+
+
+.cierre p {
+
+    font-size:
+        clamp(
+            16px,
+            4.3vw,
+            19px
+        );
+
+    line-height: 2;
+
+    margin-bottom: 22px;
+
+}
+
+
+.cierre .especial {
+
+    color: #84182f;
+
+    font-size:
+        clamp(
+            19px,
+            5vw,
+            23px
+        );
+
+    font-style: italic;
+
+}
+
+
+/* =========================================================
+   GALERÍA
+========================================================= */
+
+.galeria {
+
+    position: relative;
+
+    z-index: 10;
+
+    margin-top: 70px;
+
+    padding-top: 35px;
+
+    border-top:
+        1px solid
+        rgba(120,30,45,.15);
+
+    text-align: center;
+
+}
+
+
+.decoracion-galeria {
+
+    margin-bottom: 15px;
+
+    color: #d2a437;
+
+    font-size: 22px;
+
+    letter-spacing: 7px;
+
+}
+
+
+.galeria-titulo {
+
+    margin-bottom: 10px;
+
+    color: #84182f;
+
+    font-size:
+        clamp(
+            25px,
+            7vw,
+            34px
+        );
+
+    font-weight: normal;
+
+}
+
+
+.galeria-subtitulo {
+
+    margin-bottom: 30px;
+
+    color: #98767b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    font-style: italic;
+
+}
+
+
+/* =========================================================
+   FOTOS
+========================================================= */
+
+.fotos {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    width: 100%;
+
+}
+
+
+.recuerdo {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    background: #eee;
+
+    box-shadow:
+        0 15px 35px
+        rgba(70,10,20,.18);
+
+    opacity: 0;
+
+    transform:
+        translateY(35px)
+        scale(.97);
+
+    transition:
+
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+.recuerdo.mostrar {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+.recuerdo img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    transition:
+        transform 1s ease;
+
+}
+
+
+.recuerdo:hover img {
+
+    transform: scale(1.03);
+
+}
+
+
+.recuerdo.destacada img {
+
+    aspect-ratio: 4 / 5;
+
+}
+
+
+.recuerdo-frase {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding:
+        55px 18px 18px;
+
+    color: white;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    text-shadow:
+        0 2px 8px
+        rgba(0,0,0,.8);
+
+    background:
+
+        linear-gradient(
+            transparent,
+            rgba(30,5,12,.78)
+        );
+
+}
+
+
+.fotos-dos {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+
+}
+
+
+.fotos-dos .recuerdo img {
+
+    aspect-ratio: 1 / 1;
+
+}
+
+
+.mensaje-fotos {
+
+    margin-top: 35px;
+
+    padding:
+        20px 10px;
+
+    color: #7d444d;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    font-style: italic;
+
+}
+
+
+/* =========================================================
+   FIRMA
+========================================================= */
+
+.firma {
+
+    position: relative;
+
+    z-index: 10;
+
+    text-align: center;
+
+    margin-top: 50px;
+
+    padding-bottom: 20px;
+
+}
+
+
+.firma .para {
+
+    color: #9a6d72;
+
+    font-size: 14px;
+
+    font-style: italic;
+
+    margin-bottom: 12px;
+
+}
+
+
+.firma .nombre {
+
+    color: #84182f;
+
+    font-size: 30px;
+
+    font-style: italic;
+
+}
+
+
+.firma .corazon-final {
+
+    color: #b92f46;
+
+    font-size: 20px;
+
+    margin-top: 10px;
+
+}
+
+
+/* =========================================================
+   REVELACIÓN
+========================================================= */
+
+.revelar {
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+
+        opacity 1.2s ease,
+        transform 1.2s ease;
+
+}
+
+
+.revelar.mostrar {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    position: relative;
+
+    z-index: 10;
+
+    text-align: center;
+
+    padding:
+        25px 15px 50px;
+
+    color: #79535a;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   MÓVILES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .fotos-dos {
+        gap: 8px;
+    }
+
+    .recuerdo-frase {
+        font-size: 13px;
+    }
+
+    .contenido-carta {
+
+        padding:
+            30px 20px;
+
+    }
+
+    .sobre-contenedor {
+
+        width: 90vw;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLETS / PANTALLAS GRANDES
+========================================================= */
+
+@media (min-width: 600px) {
+
+    #carta {
+
+        padding-top: 120px;
+
+    }
+
+    .fotos {
+
+        gap: 30px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     PANTALLA DE APERTURA
+===================================================== -->
+
+<section id="inicio">
+
+
+    <div class="estrellas"></div>
+
+
+    <div class="luna"></div>
+
+
+    <div class="intro">
+
+        <small>
+            Hay algo que quiero decirte...
+        </small>
+
+        <h1>
+            Para ti, Sofi ♡
+        </h1>
+
+    </div>
+
+
+    <div class="sobre-contenedor">
+
+
+        <div
+            class="sobre"
+            id="sobre"
+            onclick="abrirCarta()"
+        >
+
+
+            <div class="papel">
+
+                <span>
+
+                    Una carta para ti...
+
+                    <br>
+
+                    ♡
+
+                </span>
+
+            </div>
+
+
+            <div class="sobre-cuerpo"></div>
+
+
+            <div class="solapa"></div>
+
+
+            <div class="sello">
+
+                ♥
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="tocar">
+
+        Toca el sobre para abrirlo
+
+    </div>
+
 
 </section>
 
 
-<!-- =================================================
-     PARTE FINAL
-================================================= -->
 
-<section class="cierre revelar">
+<!-- =====================================================
+     CARTA
+===================================================== -->
 
-    <p>
-        No sé qué estés pensando mientras lees esto.
-        Y no pretendo saberlo.
-    </p>
+<main id="carta">
 
-    <p>
-        Pero sí quería que supieras algo que quizás nunca
-        te dije de la manera correcta:
-    </p>
 
-    <p class="especial">
-        Yo todavía quiero volver contigo.
-    </p>
+    <div
+        class="corazones"
+        id="corazones"
+    ></div>
 
-    <p>
-        No porque tenga miedo de estar sin ti.
-        No porque quiera borrar lo que pasó.
-        Y mucho menos porque quiera obligarte a regresar.
-    </p>
 
-    <p>
-        Quiero volver porque, después de todo lo que hemos
-        vivido, todavía siento que tú eres alguien con quien
-        quiero compartir mi vida.
-    </p>
+    <div id="petalos"></div>
 
-    <p>
-        Quiero tener la oportunidad de hacer las cosas
-        mejor.
-    </p>
 
-    <p>
-        De escucharte.
-        <br>
-        De entenderte.
-        <br>
-        De cuidarte.
-        <br>
-        De recuperar tu confianza.
-        <br>
-        Y de volver a construir ese "nosotros".
-    </p>
 
-    <p class="especial">
-        Si todavía queda un poquito de nosotros dentro de ti,
-        yo quiero luchar por ese poquito.
-    </p>
+    <article class="contenido-carta">
 
-    <p>
-        No necesito que me respondas ahora.
-        No necesito que tomes una decisión mientras lees
-        estas palabras.
-    </p>
 
-    <p>
-        Solo quería que supieras lo que realmente quiero.
-    </p>
+        <!-- =================================================
+             ENCABEZADO
+        ================================================= -->
 
-    <p class="especial">
-        Quiero volver a intentarlo contigo.
-    </p>
+        <header class="encabezado revelar">
 
-    <p>
-        Y si algún día decides abrirme nuevamente la puerta,
-        quiero entrar diferente.
-    </p>
+            <small>
+                Para alguien que todavía ocupa
+                un lugar enorme en mi corazón
+            </small>
 
-    <p>
-        Con más paciencia.
-        <br>
-        Con más comprensión.
-        <br>
-        Con más ganas de cuidarnos.
-        <br>
-        Y con la intención de demostrarte que esta vez
-        podemos hacerlo mejor.
-    </p>
+            <h2>
+                Sofi
+            </h2>
 
-    <p>
-        Porque todavía te quiero, Sofi.
-    </p>
+            <div class="linea"></div>
 
-    <p class="especial">
-        Y todavía quiero que seas tú.
-    </p>
+        </header>
 
-</section>
+
+
+        <!-- =================================================
+             CARTA PRINCIPAL
+        ================================================= -->
+
+        <section class="texto revelar">
+
+
+            <p>
+
+                No sé si existe una manera perfecta de
+                escribir todo lo que siento, pero sé que
+                necesitaba intentarlo.
+
+            </p>
+
+
+            <p>
+
+                Porque hay algo que quizás nunca dejé de
+                tener claro: yo todavía te quiero en mi vida.
+
+            </p>
+
+
+            <p>
+
+                Y esta carta no nace solamente de la nostalgia
+                por lo que vivimos. Nace de algo mucho más
+                sincero: de las ganas que todavía tengo de
+                volver a encontrarnos.
+
+            </p>
+
+
+            <p>
+
+                He pensado muchísimo en nosotros. En todo lo
+                bonito que vivimos, en nuestras risas, nuestras
+                conversaciones, nuestros momentos y todas esas
+                pequeñas cosas que hicieron que fueras una
+                persona tan importante para mí.
+
+            </p>
+
+
+            <p>
+
+                Pero también he pensado en nuestros errores,
+                en las cosas que pudieron hacerse diferente y
+                en todo aquello que quizás nos fue alejando.
+
+            </p>
+
+
+            <p class="centrado">
+
+                Y si algo he entendido con el tiempo...
+
+                <br><br>
+
+                es que no quiero volver simplemente
+                para repetir nuestra historia.
+
+            </p>
+
+
+            <p class="centrado">
+
+                Quiero volver para escribir una historia
+                diferente contigo.
+
+            </p>
+
+
+            <p>
+
+                Una historia en la que podamos escucharnos
+                más, entendernos mejor, hablar de lo que
+                sentimos y aprender realmente de todo aquello
+                que nos hizo daño.
+
+            </p>
+
+
+            <p>
+
+                Sé que decir "quiero cambiar" es fácil.
+                Cualquiera puede escribirlo en una carta.
+
+            </p>
+
+
+            <p>
+
+                Por eso no quiero llenarte de promesas
+                solamente para conseguir que regreses.
+
+            </p>
+
+
+            <p>
+
+                Si alguna vez vuelvo a tener la oportunidad
+                de estar contigo, quiero demostrártelo con
+                hechos.
+
+            </p>
+
+
+            <p>
+
+                Quiero volver a ganarme tu confianza.
+                Quiero volver a conquistarte.
+                Quiero volver a hacerte sentir que estar
+                conmigo puede ser algo bonito, tranquilo y
+                especial.
+
+            </p>
+
+
+            <p>
+
+                Quiero aprender a quererte de la manera en
+                que tú necesitas ser querida.
+
+            </p>
+
+
+            <p>
+
+                Y quiero que, si algún día volvemos a estar
+                juntos, no sea porque olvidamos lo que pasó,
+                sino porque aprendimos de ello.
+
+            </p>
+
+
+            <p>
+
+                Extraño muchas cosas de nosotros.
+
+            </p>
+
+
+            <p>
+
+                Extraño nuestras conversaciones, nuestras
+                risas, nuestras pequeñas costumbres, esos
+                momentos que solamente nosotros entendíamos.
+
+            </p>
+
+
+            <p>
+
+                Pero sobre todo...
+
+            </p>
+
+
+            <p class="centrado">
+
+                extraño tenerte cerca.
+
+            </p>
+
+
+            <p>
+
+                Extraño esa sensación de saber que eras una
+                de las primeras personas a las que quería
+                contarle algo cuando me pasaba.
+
+            </p>
+
+
+            <p>
+
+                Extraño compartir mis días contigo.
+
+            </p>
+
+
+            <p>
+
+                Y sí, todavía pienso en nosotros.
+
+            </p>
+
+
+            <p>
+
+                Todavía imagino conversaciones que quisiera
+                tener contigo, lugares a los que me gustaría
+                ir contigo y momentos que me gustaría volver
+                a vivir a tu lado.
+
+            </p>
+
+
+            <p class="centrado">
+
+                Porque para mí, lo nuestro todavía significa
+                muchísimo.
+
+            </p>
+
+
+            <p>
+
+                No quiero fingir que ya no siento nada cuando
+                la verdad es completamente diferente.
+
+            </p>
+
+
+            <p>
+
+                Todavía te quiero.
+
+            </p>
+
+
+            <p>
+
+                Y todavía tengo ganas de luchar por nosotros.
+
+            </p>
+
+
+            <p>
+
+                No desde la desesperación.
+
+                <br>
+
+                No desde el miedo.
+
+                <br>
+
+                Sino desde la certeza de que, si existe una
+                oportunidad de volver a construir algo contigo,
+                quiero intentarlo de verdad.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             CIERRE
+        ================================================= -->
+
+        <section class="cierre revelar">
+
+
+            <p>
+
+                No sé exactamente qué pasa por tu cabeza
+                mientras lees esto.
+
+            </p>
+
+
+            <p>
+
+                Tampoco sé qué siente tu corazón ahora mismo.
+
+            </p>
+
+
+            <p>
+
+                Y no quiero presionarte para que tengas una
+                respuesta inmediata.
+
+            </p>
+
+
+            <p>
+
+                Solo quiero que conozcas mi verdad.
+
+            </p>
+
+
+            <p class="especial">
+
+                Yo todavía quiero volver contigo.
+
+            </p>
+
+
+            <p>
+
+                Quiero volver a tener la oportunidad de
+                conquistarte.
+
+            </p>
+
+
+            <p>
+
+                Quiero volver a hacerte sonreír.
+
+            </p>
+
+
+            <p>
+
+                Quiero volver a crear recuerdos contigo.
+
+            </p>
+
+
+            <p>
+
+                Quiero volver a sentir que somos un equipo.
+
+            </p>
+
+
+            <p>
+
+                Y quiero que, si algún día decidimos
+                intentarlo nuevamente, podamos mirar atrás
+                y decir que todo aquello que vivimos nos
+                enseñó a querernos mejor.
+
+            </p>
+
+
+            <p>
+
+                No espero que simplemente olvides lo malo.
+
+            </p>
+
+
+            <p>
+
+                Quiero tener la oportunidad de demostrarte
+                que aprendí de ello.
+
+            </p>
+
+
+            <p>
+
+                Quiero escucharte.
+
+                <br>
+
+                Entenderte.
+
+                <br>
+
+                Cuidarte.
+
+                <br>
+
+                Tener paciencia.
+
+                <br>
+
+                Y volver a construir tu confianza poco a poco.
+
+            </p>
+
+
+            <p class="especial">
+
+                Si todavía queda un poquito de nosotros
+                dentro de ti...
+
+            </p>
+
+
+            <p class="especial">
+
+                yo quiero luchar por ese poquito.
+
+            </p>
+
+
+            <p>
+
+                Porque no quiero que lo nuestro se quede
+                solamente como un recuerdo bonito.
+
+            </p>
+
+
+            <p>
+
+                Quiero que, si tú también lo quieres,
+                podamos convertir ese recuerdo en una
+                nueva oportunidad.
+
+            </p>
+
+
+            <p>
+
+                Una oportunidad para empezar de nuevo.
+
+            </p>
+
+
+            <p>
+
+                Pero esta vez...
+
+            </p>
+
+
+            <p class="especial">
+
+                hacerlo mejor.
+
+            </p>
+
+
+            <p>
+
+                No necesito que me respondas ahora.
+
+            </p>
+
+
+            <p>
+
+                No necesito que tomes una decisión mientras
+                lees estas palabras.
+
+            </p>
+
+
+            <p>
+
+                Solo quería que supieras qué quiero yo.
+
+            </p>
+
+
+            <p class="especial">
+
+                Quiero volver a intentarlo contigo.
+
+            </p>
+
+
+            <p>
+
+                Y si algún día decides abrirme nuevamente
+                la puerta, quiero entrar diferente.
+
+            </p>
+
+
+            <p>
+
+                Con más paciencia.
+
+                <br>
+
+                Con más comprensión.
+
+                <br>
+
+                Con más madurez.
+
+                <br>
+
+                Con más ganas de cuidarnos.
+
+                <br>
+
+                Y con la intención de demostrarte cada día
+                que vale la pena volver a construir ese
+                "nosotros".
+
+            </p>
+
+
+            <p>
+
+                Porque todavía te quiero, Sofi.
+
+            </p>
+
+
+            <p class="especial">
+
+                Y todavía quiero que seas tú.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             GALERÍA
+        ================================================= -->
+
+        <section class="galeria revelar">
+
+
+            <div class="decoracion-galeria">
+
+                🌼 ♥ 🌼
+
+            </div>
+
+
+            <h3 class="galeria-titulo">
+
+                Algunos recuerdos...
+
+            </h3>
+
+
+            <p class="galeria-subtitulo">
+
+                Porque todavía hay momentos que
+                me gustaría volver a vivir contigo.
+
+            </p>
+
+
+            <div class="fotos">
+
+
+                <!-- FOTO 1 -->
+
+                <div class="recuerdo destacada">
+
+
+                    <img
+                        src="fotos/foto1.jpg"
+                        alt="Un recuerdo juntos"
+                        loading="lazy"
+                    >
+
+
+                    <div class="recuerdo-frase">
+
+                        Un momento que todavía
+                        guardo con muchísimo cariño. ♡
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- FOTO 2 Y 3 -->
+
+                <div class="fotos-dos">
+
+
+                    <div class="recuerdo">
+
+
+                        <img
+                            src="fotos/foto2.jpg"
+                            alt="Un recuerdo especial"
+                            loading="lazy"
+                        >
+
+
+                    </div>
+
+
+
+                    <div class="recuerdo">
+
+
+                        <img
+                            src="fotos/foto3.jpg"
+                            alt="Otro recuerdo especial"
+                            loading="lazy"
+                        >
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- FOTO 4 -->
+
+                <div class="recuerdo destacada">
+
+
+                    <img
+                        src="fotos/foto4.jpg"
+                        alt="Nuestro recuerdo"
+                        loading="lazy"
+                    >
+
+
+                    <div class="recuerdo-frase">
+
+                        Quizás algún día podamos
+                        crear muchos recuerdos nuevos.
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <p class="mensaje-fotos">
+
+                Hay fotografías que solamente capturan
+                un instante...
+
+                <br><br>
+
+                pero cuando miro estas fotos,
+                yo no veo solamente imágenes.
+
+                <br><br>
+
+                Veo momentos que todavía significan
+                muchísimo para mí.
+
+                <br><br>
+
+                Y una parte de mí todavía quisiera
+                volver a vivir muchos de ellos contigo. ♡
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FIRMA
+        ================================================= -->
+
+        <div class="firma revelar">
+
+
+            <div class="para">
+
+                Si algún día me preguntas
+                qué es lo que realmente quiero...
+
+            </div>
+
+
+            <div class="nombre">
+
+                Te elegiría a ti. ♡
+
+            </div>
+
+
+            <div class="corazon-final">
+
+                ✦ ♥ ✦
+
+            </div>
+
+
+        </div>
+
+
+    </article>
+
+
+
+    <footer>
+
+        Quizás todavía nos queda
+        una historia por escribir. ♡
+
+    </footer>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     MÚSICA
+===================================================== -->
+
+<audio
+    id="musica"
+    src="musica.mp3"
+    preload="auto"
+    loop
+></audio>
+
+
+
+<script>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+let cartaAbierta = false;
+
+
+/* =========================================================
+   ABRIR CARTA
+========================================================= */
+
+function abrirCarta() {
+
+
+    if (cartaAbierta) {
+
+        return;
+
+    }
+
+
+    cartaAbierta = true;
+
+
+    const sobre =
+        document.getElementById(
+            "sobre"
+        );
+
+
+    const inicio =
+        document.getElementById(
+            "inicio"
+        );
+
+
+    const musica =
+        document.getElementById(
+            "musica"
+        );
+
+
+    /* -----------------------------------------------------
+       ABRIR SOBRE
+    ----------------------------------------------------- */
+
+    sobre.classList.add(
+        "abierto"
+    );
+
+
+    /* -----------------------------------------------------
+       MÚSICA AUTOMÁTICA
+    ----------------------------------------------------- */
+
+    musica.volume = 0.55;
+
+
+    musica.play().catch(
+        () => {
+
+            /*
+                El navegador puede bloquear
+                el audio en algunos dispositivos.
+
+                Como play() se ejecuta directamente
+                desde el toque del usuario, la mayoría
+                de navegadores móviles permitirá
+                reproducirlo.
+            */
+
+        }
+    );
+
+
+    /* -----------------------------------------------------
+       MOSTRAR CARTA
+    ----------------------------------------------------- */
+
+    setTimeout(
+        () => {
+
+            inicio.classList.add(
+                "oculto"
+            );
+
+
+            document.body.style.overflowX =
+                "hidden";
+
+
+            revelarTexto();
+
+        },
+        1800
+    );
+
+
+}
+
+
+/* =========================================================
+   REVELAR CONTENIDO
+========================================================= */
+
+function revelarTexto() {
+
+
+    const elementos =
+        document.querySelectorAll(
+            ".revelar"
+        );
+
+
+    elementos.forEach(
+        (elemento, indice) => {
+
+
+            setTimeout(
+                () => {
+
+                    elemento.classList.add(
+                        "mostrar"
+                    );
+
+                },
+                700 + indice * 280
+            );
+
+
+        }
+    );
+
+
+
+    /* =====================================================
+       OBSERVADOR DE FOTOS
+    ===================================================== */
+
+    const recuerdos =
+        document.querySelectorAll(
+            ".recuerdo"
+        );
+
+
+    const observador =
+        new IntersectionObserver(
+
+            (entradas) => {
+
+
+                entradas.forEach(
+                    (entrada) => {
+
+
+                        if (
+                            entrada.isIntersecting
+                        ) {
+
+
+                            entrada.target.classList.add(
+                                "mostrar"
+                            );
+
+
+                            observador.unobserve(
+                                entrada.target
+                            );
+
+
+                        }
+
+
+                    }
+                );
+
+
+            },
+
+            {
+                threshold: .15
+            }
+
+        );
+
+
+    recuerdos.forEach(
+        (foto) => {
+
+            observador.observe(
+                foto
+            );
+
+        }
+    );
+
+
+}
+
+
+/* =========================================================
+   CREAR CORAZONES
+========================================================= */
+
+function crearCorazones() {
+
+
+    const contenedor =
+        document.getElementById(
+            "corazones"
+        );
+
+
+    for (
+        let i = 0;
+        i < 18;
+        i++
+    ) {
+
+
+        const corazon =
+            document.createElement(
+                "div"
+            );
+
+
+        corazon.className =
+            "corazon";
+
+
+        corazon.innerHTML =
+            Math.random() > .5
+                ? "♥"
+                : "♡";
+
+
+        corazon.style.left =
+            Math.random() * 100 + "%";
+
+
+        corazon.style.animationDelay =
+            Math.random() * 8 + "s";
+
+
+        corazon.style.animationDuration =
+            (
+                6 +
+                Math.random() * 7
+            ) + "s";
+
+
+        corazon.style.fontSize =
+            (
+                12 +
+                Math.random() * 14
+            ) + "px";
+
+
+        contenedor.appendChild(
+            corazon
+        );
+
+
+    }
+
+
+}
+
+
+/* =========================================================
+   CREAR PÉTALOS
+========================================================= */
+
+function crearPetalos() {
+
+
+    const contenedor =
+        document.getElementById(
+            "petalos"
+        );
+
+
+    for (
+        let i = 0;
+        i < 22;
+        i++
+    ) {
+
+
+        const petalo =
+            document.createElement(
+                "div"
+            );
+
+
+        petalo.className =
+            "petalo";
+
+
+        petalo.innerHTML =
+            Math.random() > .5
+                ? "✦"
+                : "✿";
+
+
+        petalo.style.left =
+            Math.random() * 100 + "%";
+
+
+        petalo.style.animationDelay =
+            Math.random() * 10 + "s";
+
+
+        petalo.style.animationDuration =
+            (
+                7 +
+                Math.random() * 8
+            ) + "s";
+
+
+        petalo.style.fontSize =
+            (
+                10 +
+                Math.random() * 12
+            ) + "px";
+
+
+        contenedor.appendChild(
+            petalo
+        );
+
+
+    }
+
+
+}
+
+
+/* =========================================================
+   INICIALIZAR
+========================================================= */
+
+crearCorazones();
+
+crearPetalos();
+
+
+/* =========================================================
+   BLOQUEAR SCROLL ANTES DE ABRIR
+========================================================= */
+
+document.body.style.overflow =
+    "hidden";
+
+
+</script>
+
+
+</body>
+
+</html>
