@@ -1,0 +1,3627 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width,
+             initial-scale=1.0,
+             maximum-scale=1.0,
+             user-scalable=no"
+>
+
+<meta name="theme-color" content="#090208">
+
+<title>Para ti, Sofi ♡</title>
+
+
+<style>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --rojo-oscuro: #18050a;
+    --rojo: #8d102b;
+    --rojo-claro: #c9284c;
+
+    --rosa: #ff7893;
+    --rosa-suave: #ffc3ce;
+
+    --dorado: #f4cf68;
+    --amarillo: #ffe36e;
+
+    --papel: #fffaf0;
+    --papel-2: #f5e5cf;
+
+    --texto: #3e2025;
+
+    --sombra:
+        0 30px 80px rgba(0,0,0,.65);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+
+    -webkit-tap-highlight-color:
+        transparent;
+
+}
+
+
+html {
+
+    background:
+        #080204;
+
+    scroll-behavior:
+        smooth;
+
+}
+
+
+body {
+
+    min-height:
+        100vh;
+
+    min-height:
+        100svh;
+
+    overflow-x:
+        hidden;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    background:
+        #080204;
+
+}
+
+
+/* =========================================================
+   PANTALLA DE INICIO
+========================================================= */
+
+#inicio {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        1000;
+
+    overflow:
+        hidden;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(117,22,48,.55),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(88,11,31,.4),
+            transparent 50%
+        ),
+
+        linear-gradient(
+            180deg,
+            #090207,
+            #210712 55%,
+            #090204
+        );
+
+    transition:
+        opacity 1.6s ease,
+        visibility 1.6s ease;
+
+}
+
+
+#inicio.oculto {
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   LUNA
+========================================================= */
+
+.luna {
+
+    position:
+        absolute;
+
+    top:
+        7%;
+
+    right:
+        9%;
+
+    width:
+        75px;
+
+    height:
+        75px;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            #fff9d5,
+            #f8dd91 50%,
+            #cda74e 100%
+        );
+
+    box-shadow:
+
+        0 0 25px
+        rgba(255,225,145,.55),
+
+        0 0 80px
+        rgba(255,213,113,.2);
+
+    animation:
+        lunaFlota 6s ease-in-out infinite;
+
+}
+
+
+@keyframes lunaFlota {
+
+    0%,100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px);
+
+    }
+
+}
+
+
+/* =========================================================
+   ESTRELLAS
+========================================================= */
+
+.estrellas {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+}
+
+
+.estrella {
+
+    position:
+        absolute;
+
+    width:
+        3px;
+
+    height:
+        3px;
+
+    border-radius:
+        50%;
+
+    background:
+        #fff4bf;
+
+    box-shadow:
+        0 0 8px #ffe7a0;
+
+    animation:
+        estrella 3s ease-in-out infinite;
+
+}
+
+
+@keyframes estrella {
+
+    0%,100% {
+
+        opacity:
+            .15;
+
+        transform:
+            scale(.7);
+
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1.5);
+
+    }
+
+}
+
+
+/* =========================================================
+   ESTRELLAS POSICIONES
+========================================================= */
+
+.e1 { top:8%; left:15%; }
+.e2 { top:17%; left:38%; animation-delay:.7s; }
+.e3 { top:28%; left:8%; animation-delay:1.4s; }
+.e4 { top:38%; left:28%; animation-delay:2s; }
+.e5 { top:13%; right:35%; animation-delay:1s; }
+.e6 { top:31%; right:20%; animation-delay:1.7s; }
+.e7 { top:53%; left:12%; animation-delay:.5s; }
+.e8 { top:60%; right:10%; animation-delay:1.2s; }
+.e9 { top:72%; left:30%; animation-delay:2.2s; }
+.e10 { top:80%; right:30%; animation-delay:.8s; }
+.e11 { top:45%; right:45%; animation-delay:1.6s; }
+.e12 { top:10%; left:60%; animation-delay:2.6s; }
+
+
+/* =========================================================
+   NIEBLA
+========================================================= */
+
+.niebla {
+
+    position:
+        absolute;
+
+    left:
+        -20%;
+
+    width:
+        140%;
+
+    height:
+        150px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(146,44,68,.08);
+
+    filter:
+        blur(30px);
+
+    animation:
+        niebla 12s ease-in-out infinite alternate;
+
+}
+
+
+.niebla.n1 {
+
+    bottom:
+        10%;
+
+}
+
+
+.niebla.n2 {
+
+    bottom:
+        25%;
+
+    animation-delay:
+        -5s;
+
+}
+
+
+@keyframes niebla {
+
+    from {
+
+        transform:
+            translateX(-5%);
+
+    }
+
+    to {
+
+        transform:
+            translateX(5%);
+
+    }
+
+}
+
+
+/* =========================================================
+   JARDÍN INFERIOR
+========================================================= */
+
+.jardin {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    bottom:
+        -5px;
+
+    height:
+        150px;
+
+    overflow:
+        hidden;
+
+}
+
+
+.hierba {
+
+    position:
+        absolute;
+
+    bottom:
+        0;
+
+    width:
+        100%;
+
+    height:
+        70px;
+
+    background:
+
+        linear-gradient(
+            170deg,
+            transparent 0 25%,
+            #17050a 26%
+        );
+
+}
+
+
+.flor {
+
+    position:
+        absolute;
+
+    bottom:
+        15px;
+
+    font-size:
+        50px;
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(255,210,55,.25)
+        );
+
+    animation:
+        florMovimiento 4s ease-in-out infinite;
+
+}
+
+
+.flor1 {
+
+    left:
+        -5px;
+
+}
+
+
+.flor2 {
+
+    right:
+        -5px;
+
+    animation-delay:
+        1s;
+
+}
+
+
+.flor3 {
+
+    left:
+        25%;
+
+    bottom:
+        4px;
+
+    font-size:
+        35px;
+
+    animation-delay:
+        1.5s;
+
+}
+
+
+.flor4 {
+
+    right:
+        25%;
+
+    bottom:
+        0;
+
+    font-size:
+        40px;
+
+    animation-delay:
+        2s;
+
+}
+
+
+@keyframes florMovimiento {
+
+    0%,100% {
+
+        transform:
+            rotate(-6deg)
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            rotate(6deg)
+            translateY(-7px);
+
+    }
+
+}
+
+
+/* =========================================================
+   CONTENEDOR DE APERTURA
+========================================================= */
+
+.escena {
+
+    position:
+        relative;
+
+    z-index:
+        20;
+
+    width:
+        min(92vw, 440px);
+
+    height:
+        650px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+}
+
+
+/* =========================================================
+   TEXTO SUPERIOR
+========================================================= */
+
+.intro {
+
+    position:
+        absolute;
+
+    top:
+        35px;
+
+    width:
+        100%;
+
+    text-align:
+        center;
+
+    color:
+        white;
+
+    animation:
+        aparecer 2s ease forwards;
+
+}
+
+
+.intro .pequeno {
+
+    display:
+        block;
+
+    margin-bottom:
+        12px;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        4px;
+
+    text-transform:
+        uppercase;
+
+    color:
+        #c994a0;
+
+}
+
+
+.intro h1 {
+
+    font-size:
+        clamp(27px, 7.5vw, 38px);
+
+    line-height:
+        1.25;
+
+    font-weight:
+        normal;
+
+    color:
+        #ffe5e9;
+
+    text-shadow:
+
+        0 0 20px
+        rgba(255,80,115,.3);
+
+}
+
+
+.intro .sub {
+
+    margin-top:
+        10px;
+
+    font-size:
+        14px;
+
+    color:
+        #b87986;
+
+}
+
+
+@keyframes aparecer {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(-20px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   SOBRE
+========================================================= */
+
+.sobre-wrapper {
+
+    position:
+        relative;
+
+    width:
+        min(86vw, 380px);
+
+    height:
+        270px;
+
+    margin-top:
+        110px;
+
+    perspective:
+        1200px;
+
+    filter:
+        drop-shadow(
+            0 35px 40px
+            rgba(0,0,0,.65)
+        );
+
+}
+
+
+.sobre {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    cursor:
+        pointer;
+
+    transform-style:
+        preserve-3d;
+
+    transition:
+        transform .5s ease;
+
+}
+
+
+.sobre:active {
+
+    transform:
+        scale(.96);
+
+}
+
+
+/* =========================================================
+   CUERPO
+========================================================= */
+
+.sobre-cuerpo {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border-radius:
+        5px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #a51b37,
+            #651021
+        );
+
+    box-shadow:
+
+        inset 0 0 35px
+        rgba(0,0,0,.35);
+
+}
+
+
+/* =========================================================
+   PARTE INFERIOR
+========================================================= */
+
+.sobre-abajo {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        5;
+
+    clip-path:
+        polygon(
+            0 100%,
+            50% 42%,
+            100% 100%
+        );
+
+    background:
+        #7e1128;
+
+}
+
+
+/* =========================================================
+   LATERALES
+========================================================= */
+
+.sobre-lado {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        4;
+
+}
+
+
+.sobre-lado::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    clip-path:
+        polygon(
+            0 0,
+            52% 50%,
+            0 100%
+        );
+
+    background:
+        #8e142e;
+
+}
+
+
+.sobre-lado::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    clip-path:
+        polygon(
+            100% 0,
+            48% 50%,
+            100% 100%
+        );
+
+    background:
+        #741023;
+
+}
+
+
+/* =========================================================
+   PAPEL
+========================================================= */
+
+.papel {
+
+    position:
+        absolute;
+
+    left:
+        7%;
+
+    bottom:
+        7%;
+
+    width:
+        86%;
+
+    height:
+        210px;
+
+    z-index:
+        3;
+
+    border-radius:
+        4px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fffdf5,
+            #f3e4d0
+        );
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,.3);
+
+    transition:
+        transform 1.5s
+        cubic-bezier(.16,.8,.25,1);
+
+}
+
+
+.papel::before {
+
+    content:
+        "♡";
+
+    position:
+        absolute;
+
+    top:
+        22px;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    text-align:
+        center;
+
+    color:
+        #9d1731;
+
+    font-size:
+        30px;
+
+}
+
+
+/* =========================================================
+   SOLAPA
+========================================================= */
+
+.solapa {
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    height:
+        150px;
+
+    z-index:
+        8;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #b42242,
+            #731022
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    transform-origin:
+        top center;
+
+    transition:
+        transform 1.25s
+        cubic-bezier(.15,.8,.2,1);
+
+}
+
+
+/* =========================================================
+   SELLO
+========================================================= */
+
+.sello {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        55%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width:
+        64px;
+
+    height:
+        64px;
+
+    z-index:
+        15;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            #e94867,
+            #8a1027
+        );
+
+    color:
+        #ffe9b3;
+
+    font-size:
+        30px;
+
+    box-shadow:
+
+        0 5px 18px
+        rgba(0,0,0,.5),
+
+        0 0 30px
+        rgba(224,35,70,.35);
+
+    transition:
+        opacity .5s,
+        transform .8s;
+
+}
+
+
+/* =========================================================
+   SOBRE ABIERTO
+========================================================= */
+
+.sobre.abierto
+.sobre {
+
+    transform:
+        translateY(0);
+
+}
+
+
+.sobre.abierto
+.solapa {
+
+    transform:
+        rotateX(180deg);
+
+}
+
+
+.sobre.abierto
+.papel {
+
+    transform:
+        translateY(-170px)
+        scale(1.02);
+
+}
+
+
+.sobre.abierto
+.sello {
+
+    opacity:
+        0;
+
+    transform:
+        translate(-50%,-50%)
+        scale(2)
+        rotate(20deg);
+
+}
+
+
+/* =========================================================
+   TEXTO TOCAR
+========================================================= */
+
+.tocar {
+
+    position:
+        absolute;
+
+    bottom:
+        35px;
+
+    text-align:
+        center;
+
+    color:
+        #c58b96;
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        1.5px;
+
+    animation:
+        pulsar 2s infinite;
+
+}
+
+
+.tocar span {
+
+    color:
+        #ef5b78;
+
+}
+
+
+@keyframes pulsar {
+
+    0%,100% {
+
+        opacity:
+            .45;
+
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =========================================================
+   CARTA
+========================================================= */
+
+#carta {
+
+    position:
+        relative;
+
+    min-height:
+        100svh;
+
+    padding:
+        60px 15px 90px;
+
+    overflow:
+        hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 0%,
+            #561321,
+            transparent 35%
+        ),
+
+        linear-gradient(
+            180deg,
+            #18050b,
+            #080204
+        );
+
+    opacity:
+        0;
+
+    transform:
+        scale(1.08);
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s ease;
+
+}
+
+
+#carta.visible {
+
+    opacity:
+        1;
+
+    transform:
+        scale(1);
+
+}
+
+
+/* =========================================================
+   HALO DE FONDO
+========================================================= */
+
+.halo {
+
+    position:
+        absolute;
+
+    top:
+        10%;
+
+    left:
+        50%;
+
+    width:
+        500px;
+
+    height:
+        500px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(164,31,66,.12);
+
+    filter:
+        blur(80px);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   PARTÍCULAS
+========================================================= */
+
+.particulas {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+
+    z-index:
+        5;
+
+}
+
+
+.particula {
+
+    position:
+        absolute;
+
+    width:
+        3px;
+
+    height:
+        3px;
+
+    border-radius:
+        50%;
+
+    background:
+        #ffdca1;
+
+    box-shadow:
+        0 0 10px
+        rgba(255,220,161,.8);
+
+    animation:
+        particula 8s linear infinite;
+
+}
+
+
+@keyframes particula {
+
+    from {
+
+        transform:
+            translateY(100vh);
+
+        opacity:
+            0;
+
+    }
+
+    20% {
+
+        opacity:
+            .8;
+
+    }
+
+    80% {
+
+        opacity:
+            .4;
+
+    }
+
+    to {
+
+        transform:
+            translateY(-20vh);
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =========================================================
+   PÉTALOS
+========================================================= */
+
+.petalos {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    overflow:
+        hidden;
+
+    pointer-events:
+        none;
+
+    z-index:
+        30;
+
+}
+
+
+.petalo {
+
+    position:
+        absolute;
+
+    top:
+        -50px;
+
+    animation:
+        caer linear forwards;
+
+}
+
+
+@keyframes caer {
+
+    0% {
+
+        transform:
+            translate3d(
+                0,
+                -40px,
+                0
+            )
+            rotate(0deg)
+            scale(.6);
+
+        opacity:
+            0;
+
+    }
+
+    10% {
+
+        opacity:
+            1;
+
+    }
+
+    100% {
+
+        transform:
+            translate3d(
+                var(--x),
+                115vh,
+                0
+            )
+            rotate(720deg)
+            scale(1.1);
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =========================================================
+   CORAZONES
+========================================================= */
+
+.corazones {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    overflow:
+        hidden;
+
+    pointer-events:
+        none;
+
+    z-index:
+        25;
+
+}
+
+
+.corazon {
+
+    position:
+        absolute;
+
+    bottom:
+        -50px;
+
+    color:
+        #df294d;
+
+    text-shadow:
+        0 0 12px
+        rgba(255,50,80,.6);
+
+    animation:
+        subir 9s linear forwards;
+
+}
+
+
+@keyframes subir {
+
+    0% {
+
+        transform:
+            translateY(0)
+            translateX(0)
+            scale(.5)
+            rotate(-10deg);
+
+        opacity:
+            0;
+
+    }
+
+    15% {
+
+        opacity:
+            .9;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-120vh)
+            translateX(var(--x))
+            scale(1.3)
+            rotate(20deg);
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =========================================================
+   HOJA
+========================================================= */
+
+.hoja {
+
+    position:
+        relative;
+
+    z-index:
+        10;
+
+    width:
+        100%;
+
+    max-width:
+        760px;
+
+    margin:
+        0 auto;
+
+    padding:
+        45px 25px 60px;
+
+    border-radius:
+        10px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fffdf6,
+            #f7e8d5
+        );
+
+    color:
+        var(--texto);
+
+    box-shadow:
+        var(--sombra);
+
+    overflow:
+        hidden;
+
+}
+
+
+.hoja::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    height:
+        7px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #8d102b,
+            #e0ad35,
+            #8d102b
+        );
+
+}
+
+
+.hoja::after {
+
+    content:
+        "🌼";
+
+    position:
+        absolute;
+
+    right:
+        -10px;
+
+    bottom:
+        -12px;
+
+    font-size:
+        100px;
+
+    opacity:
+        .3;
+
+    transform:
+        rotate(20deg);
+
+}
+
+
+/* =========================================================
+   DECORACIÓN LATERAL
+========================================================= */
+
+.decoracion {
+
+    position:
+        absolute;
+
+    top:
+        30px;
+
+    left:
+        -20px;
+
+    font-size:
+        70px;
+
+    transform:
+        rotate(-20deg);
+
+    opacity:
+        .45;
+
+}
+
+
+/* =========================================================
+   ENCABEZADO CARTA
+========================================================= */
+
+.encabezado {
+
+    position:
+        relative;
+
+    text-align:
+        center;
+
+    margin-bottom:
+        40px;
+
+}
+
+
+.encabezado .corazon {
+
+    position:
+        static;
+
+    display:
+        inline-block;
+
+    font-size:
+        35px;
+
+    color:
+        #a61935;
+
+    animation:
+        latido 1.8s infinite;
+
+}
+
+
+@keyframes latido {
+
+    0%,100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    15% {
+
+        transform:
+            scale(1.2);
+
+    }
+
+    30% {
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+.encabezado h2 {
+
+    margin-top:
+        10px;
+
+    font-size:
+        clamp(
+            30px,
+            9vw,
+            48px
+        );
+
+    font-weight:
+        normal;
+
+    color:
+        #78172d;
+
+}
+
+
+.encabezado .linea {
+
+    width:
+        80px;
+
+    height:
+        2px;
+
+    margin:
+        15px auto;
+
+    background:
+        #d0a02e;
+
+}
+
+
+.encabezado small {
+
+    color:
+        #9d777d;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        2px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.contenido p {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin-bottom:
+        25px;
+
+    font-size:
+        clamp(
+            16px,
+            4.5vw,
+            19px
+        );
+
+    line-height:
+        1.9;
+
+}
+
+
+.contenido strong {
+
+    color:
+        #8e1830;
+
+}
+
+
+/* =========================================================
+   FRASES DESTACADAS
+========================================================= */
+
+.destacado {
+
+    position:
+        relative;
+
+    margin:
+        42px 0;
+
+    padding:
+        28px 18px;
+
+    text-align:
+        center;
+
+    font-size:
+        clamp(
+            20px,
+            5.8vw,
+            28px
+        );
+
+    line-height:
+        1.55;
+
+    font-style:
+        italic;
+
+    color:
+        #86182e;
+
+}
+
+
+.destacado::before {
+
+    content:
+        "“";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        -15px;
+
+    color:
+        #d2a437;
+
+    font-size:
+        55px;
+
+}
+
+
+.destacado::after {
+
+    content:
+        "”";
+
+    position:
+        absolute;
+
+    right:
+        0;
+
+    bottom:
+        -30px;
+
+    color:
+        #d2a437;
+
+    font-size:
+        55px;
+
+}
+
+
+/* =========================================================
+   SEPARADOR
+========================================================= */
+
+.separador {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    margin:
+        40px 0;
+
+}
+
+
+.separador::before,
+.separador::after {
+
+    content:
+        "";
+
+    width:
+        65px;
+
+    height:
+        1px;
+
+    background:
+        #d1a23a;
+
+}
+
+
+.separador span {
+
+    color:
+        #ad1937;
+
+    font-size:
+        18px;
+
+}
+
+
+/* =========================================================
+   FIRMA
+========================================================= */
+
+.firma {
+
+    margin-top:
+        50px;
+
+    text-align:
+        right;
+
+    color:
+        #78434b;
+
+    font-size:
+        17px;
+
+    font-style:
+        italic;
+
+}
+
+
+.firma strong {
+
+    display:
+        block;
+
+    margin-top:
+        8px;
+
+    color:
+        #89162d;
+
+    font-size:
+        29px;
+
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final {
+
+    margin-top:
+        50px;
+
+    padding-top:
+        25px;
+
+    border-top:
+        1px solid
+        rgba(100,30,40,.15);
+
+    text-align:
+        center;
+
+    color:
+        #98767b;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.8;
+
+}
+
+
+.final .flores {
+
+    margin-top:
+        12px;
+
+    font-size:
+        22px;
+
+}
+
+
+/* =========================================================
+   REVELADO
+========================================================= */
+
+.revelar {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity 1.1s ease,
+        transform 1.1s ease;
+
+}
+
+
+.revelar.mostrar {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   BOTONES
+========================================================= */
+
+.controles {
+
+    position:
+        fixed;
+
+    right:
+        16px;
+
+    bottom:
+        16px;
+
+    z-index:
+        100;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        10px;
+
+}
+
+
+.control {
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(57,8,20,.85);
+
+    color:
+        white;
+
+    font-size:
+        19px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.3);
+
+    backdrop-filter:
+        blur(8px);
+
+    cursor:
+        pointer;
+
+}
+
+
+.control:active {
+
+    transform:
+        scale(.9);
+
+}
+
+
+/* =========================================================
+   PANTALLA DE TRANSICIÓN
+========================================================= */
+
+#flash {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        2000;
+
+    background:
+        #fff7dc;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+}
+
+
+#flash.activo {
+
+    animation:
+        flash .8s ease;
+
+}
+
+
+@keyframes flash {
+
+    0% {
+
+        opacity:
+            0;
+
+    }
+
+    30% {
+
+        opacity:
+            .35;
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 700px) {
+
+    .hoja {
+
+        padding:
+            65px 70px 80px;
+
+    }
+
+    .contenido p {
+
+        line-height:
+            2;
+
+    }
+
+    .sobre-wrapper {
+
+        width:
+            400px;
+
+    }
+
+}
+
+
+/* =========================================================
+   PANTALLAS BAJAS
+========================================================= */
+
+@media (max-height: 680px) {
+
+    .escena {
+
+        transform:
+            scale(.82);
+
+    }
+
+    .intro {
+
+        top:
+            15px;
+
+    }
+
+    .sobre-wrapper {
+
+        margin-top:
+            80px;
+
+    }
+
+    .tocar {
+
+        bottom:
+            10px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCIR ANIMACIONES
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     INTRO
+======================================================== -->
+
+<section id="inicio">
+
+
+    <div class="luna"></div>
+
+
+    <div class="estrellas">
+
+        <i class="estrella e1"></i>
+        <i class="estrella e2"></i>
+        <i class="estrella e3"></i>
+        <i class="estrella e4"></i>
+        <i class="estrella e5"></i>
+        <i class="estrella e6"></i>
+        <i class="estrella e7"></i>
+        <i class="estrella e8"></i>
+        <i class="estrella e9"></i>
+        <i class="estrella e10"></i>
+        <i class="estrella e11"></i>
+        <i class="estrella e12"></i>
+
+    </div>
+
+
+    <div class="niebla n1"></div>
+    <div class="niebla n2"></div>
+
+
+    <div class="jardin">
+
+        <div class="hierba"></div>
+
+        <div class="flor flor1">
+            🌼
+        </div>
+
+        <div class="flor flor2">
+            🌼
+        </div>
+
+        <div class="flor flor3">
+            🌻
+        </div>
+
+        <div class="flor flor4">
+            🌼
+        </div>
+
+    </div>
+
+
+    <div class="escena">
+
+
+        <div class="intro">
+
+            <span class="pequeno">
+                Una carta para ti
+            </span>
+
+            <h1>
+                Hay algo que<br>
+                todavía quiero decirte...
+            </h1>
+
+            <div class="sub">
+                Tómate un momento ♡
+            </div>
+
+        </div>
+
+
+        <div class="sobre-wrapper">
+
+
+            <div
+                class="sobre"
+                id="sobre"
+                onclick="abrirCarta()"
+            >
+
+
+                <div class="sobre-cuerpo"></div>
+
+                <div class="papel"></div>
+
+                <div class="sobre-lado"></div>
+
+                <div class="sobre-abajo"></div>
+
+                <div class="solapa"></div>
+
+
+                <div class="sello">
+                    ♥
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="tocar">
+
+            Toca el sobre para abrirlo
+            <span>♡</span>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =======================================================
+     CARTA
+======================================================== -->
+
+<main id="carta">
+
+
+    <div class="halo"></div>
+
+
+    <div
+        class="particulas"
+        id="particulas"
+    ></div>
+
+
+    <div
+        class="petalos"
+        id="petalos"
+    ></div>
+
+
+    <div
+        class="corazones"
+        id="corazones"
+    ></div>
+
+
+    <article class="hoja">
+
+
+        <div class="decoracion">
+            🌼
+        </div>
+
+
+        <!-- CABECERA -->
+
+        <header
+            class="encabezado revelar"
+        >
+
+            <div class="corazon">
+                ♥
+            </div>
+
+            <h2>
+                Para ti, Sofi
+            </h2>
+
+            <div class="linea"></div>
+
+            <small>
+                Desde un corazón que todavía te recuerda
+            </small>
+
+        </header>
+
+
+
+        <!-- CONTENIDO -->
+
+        <section class="contenido">
+
+
+            <p class="revelar">
+
+                No sé exactamente cómo empezar esta carta,
+                porque hay sentimientos que son demasiado grandes
+                para caber en unas cuantas palabras.
+
+            </p>
+
+
+            <p class="revelar">
+
+                Pero hay algo que sí sé:
+
+                <strong>
+                    te amo.
+                </strong>
+
+            </p>
+
+
+            <p class="revelar">
+
+                Te amo incluso ahora, cuando las cosas entre nosotros
+                ya no son como alguna vez soñé que serían.
+                Te amo en medio de esta distancia, de este silencio
+                y de todas las cosas que quedaron sin decir.
+
+            </p>
+
+
+
+            <div class="destacado revelar">
+
+                Ojalá pudiera regresar el tiempo,
+                no para cambiar nuestra historia,
+                sino para aprender a cuidarte mejor.
+
+            </div>
+
+
+
+            <p class="revelar">
+
+                Sé que cometí errores.
+                Sé que te hice daño y que hubo momentos
+                en los que no fui la persona que tú merecías.
+
+                Y créeme, daría muchísimo por poder borrar
+                de tu memoria cada momento en el que te hice sentir
+                tristeza, decepción o dolor.
+
+            </p>
+
+
+            <p class="revelar">
+
+                Hay cosas que uno comprende demasiado tarde.
+                A veces creemos que tendremos todo el tiempo
+                del mundo para demostrar cuánto queremos a alguien,
+                hasta que llega el momento en que solamente
+                quedan los recuerdos.
+
+            </p>
+
+
+
+            <div class="separador revelar">
+                <span>♥</span>
+            </div>
+
+
+
+            <p class="revelar">
+
+                Fuiste una parte enorme de mi vida.
+
+                Fuiste mis momentos felices,
+                mis conversaciones favoritas,
+                mis planes,
+                mis recuerdos
+                y tantas pequeñas cosas que ahora aparecen
+                de repente y me hacen extrañarte.
+
+            </p>
+
+
+            <p class="revelar">
+
+                Hay días en los que quisiera poder escribirte como antes,
+                preguntarte cómo estás,
+                contarte cualquier cosa que me pasó durante el día
+                o simplemente saber que estás bien.
+
+            </p>
+
+
+            <p class="revelar">
+
+                Pero también estoy aprendiendo que quererte significa
+                respetar tus decisiones,
+                incluso cuando esas decisiones me duelen.
+
+            </p>
+
+
+
+            <div class="destacado revelar">
+
+                Si algún día piensas en mí,
+                espero que recuerdes que,
+                a pesar de mis errores,
+                hubo alguien que te amó de verdad.
+
+            </div>
+
+
+
+            <p class="revelar">
+
+                No quiero escribirte esto para hacerte sentir culpable.
+                Tampoco para pedirte que olvides lo que pasó.
+
+                Solamente quería que supieras
+                lo que llevo dentro.
+
+            </p>
+
+
+            <p class="revelar">
+
+                Todavía hay una parte de mí que quisiera poder
+                volver atrás y hacer las cosas de otra manera.
+
+                Quisiera haber sabido valorar cada abrazo,
+                cada conversación y cada momento que tuve contigo.
+
+            </p>
+
+
+            <p class="revelar">
+
+                Porque cuando alguien significa tanto para uno,
+                perderlo no se siente simplemente como perder una relación.
+
+                Se siente como despedirse de una parte de la vida
+                que uno imaginaba que iba a permanecer para siempre.
+
+            </p>
+
+
+
+            <div class="separador revelar">
+                <span>🌼</span>
+            </div>
+
+
+
+            <p class="revelar">
+
+                No sé qué será de nosotros en el futuro.
+
+                No sé si algún día nuestras vidas volverán
+                a encontrarse de la misma manera
+                o si simplemente terminaremos siendo
+                dos personas que alguna vez se quisieron muchísimo.
+
+            </p>
+
+
+            <p class="revelar">
+
+                Lo único que puedo hacer ahora es aceptar mis errores,
+                aprender de ellos y tratar de convertirme
+                en una mejor persona.
+
+            </p>
+
+
+            <p class="revelar">
+
+                Porque si alguna vez te amé tanto como digo,
+                también tengo que aprender a respetar tu paz,
+                aunque esa paz no me incluya.
+
+            </p>
+
+
+
+            <div class="destacado revelar">
+
+                Te amo.
+
+                <br><br>
+
+                Y quizás eso sea precisamente
+                lo que hace que todo esto duela tanto.
+
+            </div>
+
+
+
+            <p class="revelar">
+
+                Gracias por los momentos bonitos.
+
+                Gracias por haberme permitido formar parte de tu vida.
+
+                Gracias por todas esas pequeñas cosas que quizás
+                para ti fueron normales,
+                pero que para mí terminaron convirtiéndose
+                en recuerdos que voy a guardar.
+
+            </p>
+
+
+            <p class="revelar">
+
+                Perdón por las veces en que no supe valorar
+                lo que tenía frente a mí.
+
+                Perdón por las veces en que mis acciones estuvieron
+                lejos de demostrar todo lo que sentía.
+
+            </p>
+
+
+            <p class="revelar">
+
+                Ojalá algún día puedas mirar hacia atrás sin dolor.
+
+                Ojalá puedas recordar lo bonito que también existió.
+
+                Y, sobre todo,
+                ojalá puedas ser feliz.
+
+            </p>
+
+
+            <p class="revelar">
+
+                Incluso si esa felicidad termina estando lejos de mí.
+
+            </p>
+
+
+
+            <div class="destacado revelar">
+
+                Te quise.
+
+                <br>
+
+                Te quiero.
+
+                <br>
+
+                Y quizás una parte de mí
+                siempre te querrá.
+
+            </div>
+
+
+
+            <div class="separador revelar">
+                <span>♥</span>
+            </div>
+
+
+
+            <p class="revelar">
+
+                No sé si estas palabras cambian algo.
+
+                Probablemente no.
+
+                Pero necesitaba decirlas al menos una vez,
+                porque hay sentimientos que se quedan demasiado tiempo
+                dentro del pecho cuando uno no encuentra
+                dónde ponerlos.
+
+            </p>
+
+
+            <p class="revelar">
+
+                Y si algún día recuerdas esta carta,
+                quiero que recuerdes solamente una cosa:
+
+                <strong>
+                    fuiste profundamente importante para mí.
+                </strong>
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- FIRMA -->
+
+        <footer
+            class="firma revelar"
+        >
+
+            Con todo mi amor,
+
+            <strong>
+                Matt ♡
+            </strong>
+
+        </footer>
+
+
+
+        <!-- FINAL -->
+
+        <div class="final revelar">
+
+            Algunas historias terminan,
+            pero lo que significaron
+            nunca deja de existir.
+
+            <div class="flores">
+
+                🌼 ♥ 🌼
+
+            </div>
+
+        </div>
+
+
+    </article>
+
+
+</main>
+
+
+
+<!-- =======================================================
+     CONTROLES
+======================================================== -->
+
+<div
+    class="controles"
+    id="controles"
+    style="display:none;"
+>
+
+
+    <button
+        class="control"
+        id="botonMusica"
+        onclick="controlarMusica()"
+        aria-label="Música"
+    >
+        ♪
+    </button>
+
+
+    <button
+        class="control"
+        onclick="reiniciarCarta()"
+        aria-label="Volver a empezar"
+    >
+        ↻
+    </button>
+
+
+</div>
+
+
+
+<!-- =======================================================
+     AUDIO
+======================================================== -->
+
+<audio
+    id="audio"
+    loop
+    preload="auto"
+>
+
+    <source
+        src="musica.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+
+<div id="flash"></div>
+
+
+
+<script>
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+let cartaAbierta = false;
+
+let musicaActiva = false;
+
+let intervalCorazones = null;
+
+
+/* =========================================================
+   ABRIR CARTA
+========================================================= */
+
+function abrirCarta() {
+
+
+    if (cartaAbierta) {
+
+        return;
+
+    }
+
+
+    cartaAbierta = true;
+
+
+    const sobre =
+        document.getElementById(
+            "sobre"
+        );
+
+
+    const inicio =
+        document.getElementById(
+            "inicio"
+        );
+
+
+    const carta =
+        document.getElementById(
+            "carta"
+        );
+
+
+    const controles =
+        document.getElementById(
+            "controles"
+        );
+
+
+    const flash =
+        document.getElementById(
+            "flash"
+        );
+
+
+    /* --------------------------------
+       Abrir sobre
+    -------------------------------- */
+
+    sobre.classList.add(
+        "abierto"
+    );
+
+
+    /* --------------------------------
+       Crear partículas
+    -------------------------------- */
+
+    crearParticulas();
+
+
+    /* --------------------------------
+       Esperar apertura
+    -------------------------------- */
+
+    setTimeout(() => {
+
+
+        flash.classList.add(
+            "activo"
+        );
+
+
+        setTimeout(() => {
+
+
+            inicio.classList.add(
+                "oculto"
+            );
+
+
+            carta.classList.add(
+                "visible"
+            );
+
+
+            controles.style.display =
+                "flex";
+
+
+            crearPetalos();
+
+
+            iniciarCorazones();
+
+
+            revelarTexto();
+
+
+        }, 250);
+
+
+    }, 1400);
+
+
+}
+
+
+/* =========================================================
+   PARTÍCULAS
+========================================================= */
+
+function crearParticulas() {
+
+
+    const contenedor =
+        document.getElementById(
+            "particulas"
+        );
+
+
+    for (
+        let i = 0;
+        i < 35;
+        i++
+    ) {
+
+
+        const p =
+            document.createElement(
+                "div"
+            );
+
+
+        p.className =
+            "particula";
+
+
+        p.style.left =
+            Math.random() * 100 + "%";
+
+
+        p.style.animationDuration =
+            5 + Math.random() * 9 + "s";
+
+
+        p.style.animationDelay =
+            Math.random() * 8 + "s";
+
+
+        p.style.opacity =
+            .2 + Math.random() * .7;
+
+
+        contenedor.appendChild(p);
+
+
+    }
+
+}
+
+
+/* =========================================================
+   PÉTALOS
+========================================================= */
+
+function crearPetalos() {
+
+
+    const contenedor =
+        document.getElementById(
+            "petalos"
+        );
+
+
+    const flores = [
+        "🌼",
+        "🌼",
+        "🌻",
+        "🌼",
+        "🌼"
+    ];
+
+
+    for (
+        let i = 0;
+        i < 45;
+        i++
+    ) {
+
+
+        const petalo =
+            document.createElement(
+                "div"
+            );
+
+
+        petalo.className =
+            "petalo";
+
+
+        petalo.textContent =
+            flores[
+                Math.floor(
+                    Math.random() *
+                    flores.length
+                )
+            ];
+
+
+        petalo.style.left =
+            Math.random() * 100 + "%";
+
+
+        petalo.style.setProperty(
+            "--x",
+            (Math.random() * 220 - 110) + "px"
+        );
+
+
+        petalo.style.animationDuration =
+            5 + Math.random() * 8 + "s";
+
+
+        petalo.style.animationDelay =
+            Math.random() * 5 + "s";
+
+
+        petalo.style.fontSize =
+            12 + Math.random() * 17 + "px";
+
+
+        contenedor.appendChild(
+            petalo
+        );
+
+
+    }
+
+}
+
+
+/* =========================================================
+   CORAZONES
+========================================================= */
+
+function crearCorazon() {
+
+
+    const contenedor =
+        document.getElementById(
+            "corazones"
+        );
+
+
+    const corazon =
+        document.createElement(
+            "div"
+        );
+
+
+    corazon.className =
+        "corazon";
+
+
+    corazon.textContent =
+        Math.random() > .4
+        ? "♥"
+        : "❤";
+
+
+    corazon.style.left =
+        Math.random() * 100 + "%";
+
+
+    corazon.style.setProperty(
+        "--x",
+        (Math.random() * 180 - 90) + "px"
+    );
+
+
+    corazon.style.fontSize =
+        12 + Math.random() * 20 + "px";
+
+
+    corazon.style.animationDuration =
+        7 + Math.random() * 6 + "s";
+
+
+    contenedor.appendChild(
+        corazon
+    );
+
+
+    setTimeout(() => {
+
+        corazon.remove();
+
+    }, 14000);
+
+
+}
+
+
+function iniciarCorazones() {
+
+
+    if (intervalCorazones) {
+
+        clearInterval(
+            intervalCorazones
+        );
+
+    }
+
+
+    intervalCorazones =
+        setInterval(
+            crearCorazon,
+            850
+        );
+
+
+}
+
+
+/* =========================================================
+   REVELAR TEXTO
+========================================================= */
+
+function revelarTexto() {
+
+
+    const elementos =
+        document.querySelectorAll(
+            ".revelar"
+        );
+
+
+    elementos.forEach(
+        (elemento, indice) => {
+
+
+            setTimeout(() => {
+
+
+                elemento.classList.add(
+                    "mostrar"
+                );
+
+
+            }, 700 + indice * 350);
+
+
+        }
+    );
+
+
+}
+
+
+/* =========================================================
+   MÚSICA
+========================================================= */
+
+function controlarMusica() {
+
+
+    const audio =
+        document.getElementById(
+            "audio"
+        );
+
+
+    const boton =
+        document.getElementById(
+            "botonMusica"
+        );
+
+
+    if (!musicaActiva) {
+
+
+        audio.play()
+        .then(() => {
+
+
+            musicaActiva =
+                true;
+
+
+            boton.textContent =
+                "♫";
+
+
+        })
+        .catch(() => {
+
+
+            alert(
+                "No se pudo reproducir la música. " +
+                "Asegúrate de tener musica.mp3 " +
+                "en la misma carpeta que index.html."
+            );
+
+
+        });
+
+
+    } else {
+
+
+        audio.pause();
+
+
+        musicaActiva =
+            false;
+
+
+        boton.textContent =
+            "♪";
+
+
+    }
+
+
+}
+
+
+/* =========================================================
+   REINICIAR
+========================================================= */
+
+function reiniciarCarta() {
+
+
+    location.reload();
+
+
+}
+
+
+/* =========================================================
+   EFECTO DE PARALLAX EN CELULAR
+========================================================= */
+
+if (
+    window.DeviceOrientationEvent
+) {
+
+
+    window.addEventListener(
+        "deviceorientation",
+        function(event) {
+
+
+            const inicio =
+                document.getElementById(
+                    "inicio"
+                );
+
+
+            if (
+                !inicio ||
+                inicio.classList.contains(
+                    "oculto"
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            const x =
+                Math.max(
+                    -10,
+                    Math.min(
+                        10,
+                        event.gamma || 0
+                    )
+                );
+
+
+            const y =
+                Math.max(
+                    -10,
+                    Math.min(
+                        10,
+                        event.beta || 0
+                    )
+                );
+
+
+            const luna =
+                document.querySelector(
+                    ".luna"
+                );
+
+
+            if (luna) {
+
+
+                luna.style.transform =
+                    `translate(
+                        ${x * .4}px,
+                        ${y * .2}px
+                    )`;
+
+
+            }
+
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   EFECTO DE DOBLE TOQUE
+========================================================= */
+
+let ultimoToque =
+    0;
+
+
+document.addEventListener(
+    "touchend",
+    function(event) {
+
+
+        const ahora =
+            Date.now();
+
+
+        if (
+            ahora - ultimoToque <
+            280
+        ) {
+
+
+            event.preventDefault();
+
+
+        }
+
+
+        ultimoToque =
+            ahora;
+
+
+    },
+    {
+        passive:false
+    }
+);
+
+
+/* =========================================================
+   EVITAR ZOOM POR GESTOS
+========================================================= */
+
+document.addEventListener(
+    "gesturestart",
+    function(event) {
+
+        event.preventDefault();
+
+    }
+);
+
+
+/* =========================================================
+   PEQUEÑA INTERACCIÓN AL TOCAR
+========================================================= */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+
+        if (
+            !cartaAbierta
+        ) {
+
+            return;
+
+        }
+
+
+        const x =
+            event.clientX;
+
+
+        const y =
+            event.clientY;
+
+
+        crearChispa(
+            x,
+            y
+        );
+
+
+    }
+);
+
+
+/* =========================================================
+   CHISPAS
+========================================================= */
+
+function crearChispa(
+    x,
+    y
+) {
+
+
+    const chispa =
+        document.createElement(
+            "div"
+        );
+
+
+    chispa.textContent =
+        "✦";
+
+
+    chispa.style.position =
+        "fixed";
+
+
+    chispa.style.left =
+        x + "px";
+
+
+    chispa.style.top =
+        y + "px";
+
+
+    chispa.style.zIndex =
+        "500";
+
+
+    chispa.style.pointerEvents =
+        "none";
+
+
+    chispa.style.color =
+        "#f5d477";
+
+
+    chispa.style.fontSize =
+        "14px";
+
+
+    chispa.style.transition =
+        "all .8s ease";
+
+
+    document.body.appendChild(
+        chispa
+    );
+
+
+    requestAnimationFrame(() => {
+
+
+        chispa.style.transform =
+            "translateY(-35px) scale(1.8)";
+
+
+        chispa.style.opacity =
+            "0";
+
+
+    });
+
+
+    setTimeout(() => {
+
+
+        chispa.remove();
+
+
+    }, 900);
+
+
+}
+
+
+/* =========================================================
+   DESACTIVAR AUDIO SI SE CIERRA / SALE
+========================================================= */
+
+document.addEventListener(
+    "visibilitychange",
+    function() {
+
+
+        if (
+            document.hidden
+        ) {
+
+
+            const audio =
+                document.getElementById(
+                    "audio"
+                );
+
+
+            if (
+                audio &&
+                musicaActiva
+            ) {
+
+                audio.pause();
+
+            }
+
+
+        }
+
+
+    }
+);
+
+
+</script>
+
+
+</body>
+</html>
+```
