@@ -45,6 +45,15 @@ body {
         serif;
 
     color: #f7e9df;
+    body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 
 }
 
@@ -2662,9 +2671,59 @@ crearPetalos();
    BLOQUEAR SCROLL ANTES DE ABRIR
 ========================================================= */
 
-document.body.style.overflow =
-    "hidden";
+function abrirCarta() {
 
+    if (cartaAbierta) {
+        return;
+    }
+
+    cartaAbierta = true;
+
+    const sobre =
+        document.getElementById("sobre");
+
+    const inicio =
+        document.getElementById("inicio");
+
+    const musica =
+        document.getElementById("musica");
+
+
+    /* Abrir sobre */
+
+    sobre.classList.add("abierto");
+
+
+    /* Música */
+
+    musica.volume = 0.55;
+
+    musica.play().catch(() => {
+        // El navegador puede bloquear el audio
+    });
+
+
+    /* Mostrar carta */
+
+    setTimeout(() => {
+
+        inicio.classList.add("oculto");
+
+        /*
+         * IMPORTANTE:
+         * volver a permitir el desplazamiento
+         * en celulares
+         */
+
+        document.body.style.overflow = "auto";
+
+        document.documentElement.style.overflowY = "auto";
+
+        revelarTexto();
+
+    }, 1800);
+
+}
 
 </script>
 
